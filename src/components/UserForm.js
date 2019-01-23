@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import FormUserDetails from './FormUserDetails';
 import FormPersonalDetails from './FormPersonalDetails';
 import Confirm from './Confirm';
+import Success from './Success';
 
 export class UserForm extends Component {
 
@@ -60,16 +61,19 @@ export class UserForm extends Component {
                 />
             )
         case 3:
+            return (
+                <Confirm 
+                nextStep = {this.nextStep}
+                prevStep = {this.prevStep}
+                handleChange = {this.handleChange}
+                values={values}
+                />
+            )
+        case 4:
         return (
-            <Confirm 
-            nextStep = {this.nextStep}
-            prevStep = {this.prevStep}
-            handleChange = {this.handleChange}
-            values={values}
+            <Success 
             />
         )
-        case 4:
-            return <h1>Success</h1>
     }
     return (
       <div>
